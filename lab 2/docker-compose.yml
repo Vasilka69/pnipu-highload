@@ -1,0 +1,40 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: lab2_redis
+    ports:
+      - '6379:6379'
+
+  lab2_1:
+    image: lab2:latest
+    container_name: lab2_1
+    ports:
+      - '8081:8067'
+    depends_on:
+      - redis
+    environment:
+      - INSTANCE_NAME=lab2_1
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+  lab2_2:
+    image: lab2:latest
+    container_name: lab2_2
+    ports:
+      - '8082:8067'
+    depends_on:
+      - redis
+    environment:
+      - INSTANCE_NAME=lab2_2
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+  lab2_3:
+    image: lab2:latest
+    container_name: lab2_3
+    ports:
+      - '8083:8067'
+    depends_on:
+      - redis
+    environment:
+      - INSTANCE_NAME=lab2_3
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379

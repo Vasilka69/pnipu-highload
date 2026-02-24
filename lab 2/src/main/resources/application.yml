@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
+  profiles:
+    active: "@spring.profiles.active@"
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
+instance:
+  name: ${INSTANCE_NAME}
+
+server:
+  port: ${SERVER_PORT}

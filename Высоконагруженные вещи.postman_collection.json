@@ -1,0 +1,133 @@
+{
+  "info": {
+    "_postman_id": "1756c01d-bc79-45d2-a501-4544ca466fba",
+    "name": "Высоконагруженные приколы",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24930066"
+  },
+  "item": [
+    {
+      "name": "1 лаба",
+      "item": [
+        {
+          "name": "incrementAndGet",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/counter",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "counter"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/counter/silent",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "counter",
+                "silent"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2 лаба",
+      "item": [
+        {
+          "name": "setScore",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"player\": \"meow\",\r\n    \"score\": 52.67\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/leaderboard/score",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "leaderboard",
+                "score"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "top",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/leaderboard/top",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "leaderboard",
+                "top"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "rank",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/leaderboard/rank/meow",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "leaderboard",
+                "rank",
+                "meow"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
