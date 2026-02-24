@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
+
+instance:
+  name: "default-instance-name"
+
+server:
+  port: 8067

@@ -1,0 +1,22 @@
+services:
+  lab1_1:
+    image: lab1:latest
+    container_name: lab1_1
+    ports:
+      - '8081:8067'
+    environment:
+      - INSTANCE_NAME=lab1_1
+  lab1_2:
+    image: lab1:latest
+    container_name: lab1_2
+    ports:
+      - '8082:8067'
+    environment:
+      - INSTANCE_NAME=lab1_2
+  lab1_3:
+    image: lab1:latest
+    container_name: lab1_3
+    ports:
+      - '8083:8067'
+    environment:
+      - INSTANCE_NAME=lab1_3

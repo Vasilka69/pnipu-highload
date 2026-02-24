@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
+  profiles:
+    active: "@spring.profiles.active@"
+
+instance:
+  name: ${INSTANCE_NAME}
+
+server:
+  port: ${SERVER_PORT}
