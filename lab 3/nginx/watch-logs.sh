@@ -1,0 +1,1 @@
+sudo tail -n 300 -f /var/log/nginx/access.log

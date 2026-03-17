@@ -2,8 +2,11 @@ services:
   redis:
     image: redis:latest
     container_name: lab2_redis
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "everysec"]
     ports:
       - '6379:6379'
+    volumes:
+      - redis_data:/data
 
   lab2_1:
     image: lab2:latest
@@ -38,3 +41,6 @@ services:
       - INSTANCE_NAME=lab2_3
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+
+volumes:
+  redis_data:

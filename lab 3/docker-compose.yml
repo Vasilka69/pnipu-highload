@@ -1,0 +1,55 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: lab3_redis
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "everysec"]
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+  lab3_1:
+    image: lab3:latest
+    container_name: lab3_1
+    ports:
+      - '8081:8067'
+    depends_on:
+      - redis
+    environment:
+      - INSTANCE_NAME=lab3_1
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - QUEUE_PROCESSED_HISTORY_LIMIT=10
+      - QUEUE_CONSUMER_POLL_DELAY_MS=300
+      - QUEUE_CONSUMER_PROCESSING_DELAY_MS=1200
+  lab3_2:
+    image: lab3:latest
+    container_name: lab3_2
+    ports:
+      - '8082:8067'
+    depends_on:
+      - redis
+    environment:
+      - INSTANCE_NAME=lab3_2
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - QUEUE_PROCESSED_HISTORY_LIMIT=10
+      - QUEUE_CONSUMER_POLL_DELAY_MS=300
+      - QUEUE_CONSUMER_PROCESSING_DELAY_MS=1200
+  lab3_3:
+    image: lab3:latest
+    container_name: lab3_3
+    ports:
+      - '8083:8067'
+    depends_on:
+      - redis
+    environment:
+      - INSTANCE_NAME=lab3_3
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - QUEUE_PROCESSED_HISTORY_LIMIT=10
+      - QUEUE_CONSUMER_POLL_DELAY_MS=300
+      - QUEUE_CONSUMER_PROCESSING_DELAY_MS=1200
+
+volumes:
+  redis_data:

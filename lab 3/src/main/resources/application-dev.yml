@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+instance:
+  name: "default-instance-name"
+
+server:
+  port: 8067
+
+queue:
+  processed:
+    history-limit: 1000
+  consumer:
+    poll-delay-ms: 300
+    processing-delay-ms: 1200
